@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PSXExtensionHandlerConfiguration handlerName="Java">
+	<Extension name="pso_DemandPublishing" context="user/" 
+		handler="Java" categorystring="contenteditor" deprecated="no">
+		<initParam name="com.percussion.user.description">This workflow action is used to kick off publish now editions.</initParam>
+		<initParam name="com.percussion.extension.version">1</initParam>
+		<initParam name="className">com.percussion.pso.demand.impl.PSDemandWorkflowAction</initParam>
+		<initParam name="com.percussion.extension.reentrant">yes</initParam>
+		<interface name="com.percussion.extension.IPSWorkflowAction"/>
+		<suppliedResources/>
+	</Extension>
+</PSXExtensionHandlerConfiguration>

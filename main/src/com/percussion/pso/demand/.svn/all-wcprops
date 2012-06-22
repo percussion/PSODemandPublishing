@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/psolib/!svn/ver/1603/PSODemandPublishing/main/src/com/percussion/pso/demand
+END
+PSDemandWork.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/psolib/!svn/ver/1478/PSODemandPublishing/main/src/com/percussion/pso/demand/PSDemandWork.java
+END
+PSDemandServiceLocator.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/psolib/!svn/ver/1478/PSODemandPublishing/main/src/com/percussion/pso/demand/PSDemandServiceLocator.java
+END
+IPSDemandService.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/psolib/!svn/ver/1478/PSODemandPublishing/main/src/com/percussion/pso/demand/IPSDemandService.java
+END
+PSDemandServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/psolib/!svn/ver/1480/PSODemandPublishing/main/src/com/percussion/pso/demand/PSDemandServiceTest.java
+END

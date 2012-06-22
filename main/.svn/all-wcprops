@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/psolib/!svn/ver/1603/PSODemandPublishing/main
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/psolib/!svn/ver/1478/PSODemandPublishing/main/.project
+END
+deploy.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/psolib/!svn/ver/1517/PSODemandPublishing/main/deploy.xml
+END
+readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/psolib/!svn/ver/1532/PSODemandPublishing/main/readme.txt
+END
+Extensions.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/psolib/!svn/ver/1517/PSODemandPublishing/main/Extensions.xml
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/psolib/!svn/ver/1531/PSODemandPublishing/main/build.xml
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/psolib/!svn/ver/1531/PSODemandPublishing/main/.classpath
+END

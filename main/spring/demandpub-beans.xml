@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="pso_demandService" singleton="true"
+		class="com.percussion.pso.demand.impl.PSDemandServiceImpl">
+		<property name="user">
+			<value>admin1</value>
+		</property>
+		<property name="password">
+			<value>demo</value>
+		</property>
+		<property name="protocol">
+			<value>http</value>
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,85 @@
+<project name="PSODemandPublishing" default="all" basedir=".">
+	<description>
+		Builds the PSO Related Item service and RelatedItemContentListGenerator
+    </description>
+	<!-- set global properties for this build -->
+	<property environment="env" />
+	<property name="build.sysclasspath" value="ignore" />
+
+
+	<property environment="env" />
+
+
+	<property name="src" location="src" />
+	<property name="lib" location="lib" />
+	<property name="build" location="build"/>
+	<property name="classes" location="${build}/classes" />
+	
+	<path id="main.class.path">
+		<fileset dir="${lib}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+	
+	<property name="rx.home" location="${env.RHYTHMYX_HOME}"/>
+	<property name="rx.lib" location="${rx.home}/AppServer/server/rx/deploy/rxapp.ear/rxapp.war/WEB-INF/lib" /> 
+	<property name="rx.web_inf" location="${rx.home}/AppServer/server/rx/deploy/rxapp.ear/rxapp.war/WEB-INF" /> 
+	
+	<path id="rx.class.path">
+		<fileset dir="${rx.lib}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+	
+		
+	<!-- name of our output jar -->
+	<property name="jarname" value="${ant.project.name}.jar"/>
+	<property name="jar" value="${build}/${jarname}"/>
+
+	<target name="rx">
+		<fail unless="env.RHYTHMYX_HOME" message="You must set the RHYTHMYX_HOME environment variable"/>
+	</target>
+	
+	<target name="compile" depends="rx">
+		<javac srcdir="${src}" destdir="${classes}" debug="true" source="1.5" 
+			classpathref="main.class.path" />
+	</target>
+
+	<target name="jar">
+		<jar jarfile="${jar}" basedir="${classes}">
+			<include name="**" />
+			<include name="build.properties" />
+			<include name="log4j.properties" />
+			<include name="readme.txt" />
+		</jar>
+	</target>
+	
+	<target name="build" depends="compile,jar">
+	</target>
+	
+	<target name="dist">
+		<zip destfile="${build}/${ant.project.name}.zip">
+			<zipfileset dir="." prefix="${ant.project.name}"> 
+				<include name="src/**"/>
+				<include name="build/*.jar"/>
+				<include name="lib"/>
+				<exclude name="lib/**.jar"/>
+				<include name="*.xml"/>
+				<include name="*.txt"/>
+				<include name="spring/**"/>
+				<include name="*.xslt"/>
+			</zipfileset>
+		</zip>
+	</target>
+	
+	<target name="deploy" depends="rx">
+		<ant antfile="deploy.xml" inheritall="true" />
+	</target>
+		
+	
+	<target name="all" depends="build,deploy">
+	</target>
+	
+	
+	
+</project>

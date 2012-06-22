@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/psolib/!svn/ver/1531/PSODemandPublishing/main/lib
+END
+log4j-1.2.14.jar
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/psolib/!svn/ver/1479/PSODemandPublishing/main/lib/log4j-1.2.14.jar
+END
+xstream.jar
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/psolib/!svn/ver/1531/PSODemandPublishing/main/lib/xstream.jar
+END
+commons-lang-2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/psolib/!svn/ver/1479/PSODemandPublishing/main/lib/commons-lang-2.1.jar
+END
+jcr-1.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/psolib/!svn/ver/1479/PSODemandPublishing/main/lib/jcr-1.0.jar
+END
+xpp3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/psolib/!svn/ver/1531/PSODemandPublishing/main/lib/xpp3.jar
+END

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <rule>
+        <transition>3</transition>
+        <!-- edition is a required field -->
+        <edition>310</edition>
+    </rule>
+    <rule>
+    	<workflow>5</workflow>
+    	<edition>320</edition>
+    </rule>
+    <rule>
+    	<transition>3</transition>
+    	<workflow>5</workflow>
+    	<edition>330</edition>
+    </rule>
+        
+    <rule>
+    	<transition>3</transition>
+    	<workflow>5</workflow>
+    	<community>40</community>
+    	<edition>340</edition>
+    </rule>
+        <rule>
+    	<transition>3</transition>
+    	<workflow>5</workflow>
+    	<community>40</community>
+    	<contentType>300</contentType>
+    	<edition>350</edition>
+    </rule>
+</config>

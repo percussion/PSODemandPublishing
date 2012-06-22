@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="PSODemandPublishing" default="install" basedir=".">
+	<description>Deployment Script</description>
+
+	<property environment="env" />
+	<!-- base directory of Rhythmyx installation -->
+	<property name="rx.home" location="${env.RHYTHMYX_HOME}" />
+	
+	<property name="build" location="build" />
+	<property name="jarname" value="${ant.project.name}"/>
+	<property name="lib" location="lib" />
+
+	<property name="rx.deploy" value="${rx.home}/AppServer/server/rx/deploy" />
+
+	<property name="rx.rxresources" value="${rx.home}/rx_resources" />
+
+	<property name="rx.rxapp" value="${rx.deploy}/rxapp.ear/rxapp.war" />
+	<property name="rx.rxapp.web-inf" value="${rx.rxapp}/WEB-INF" />
+	<property name="rx.user.spring" value="${rx.rxapp.web-inf}/config/user/spring"/>
+	<property name="rx.spring" value="${rx.rxapp.web-inf}/config/spring"/>
+	<property name="rx.rxapp.lib" value="${rx.rxapp.web-inf}/lib" />
+	<property name="rx.rxapp.pages" value="${rx.deploy}/rxapp.ear/rxapp.war/user/pages" />
+
+	<target name="rx">
+		<fail unless="env.RHYTHMYX_HOME" message="You must set the RHYTHMYX_HOME environment variable"/>
+	</target>
+	
+	<target name="install" depends="rx,jars,web-inf,installExtensions"
+		description="Default target deploys all">
+	</target>
+
+	<target name="installExtensions" unless="noExtensions">
+		<java classname="com.percussion.util.PSExtensionInstallTool" fork="true">
+			<arg value="${rx.home}"/>
+			<arg value="${basedir}"/>
+			<classpath>
+				<fileset dir="${rx.rxapp.lib}"/>
+				<fileset dir="${rx.home}/AppServer/lib/endorsed"/>
+				<fileset dir="${rx.home}/AppServer/server/rx/lib"/>
+			</classpath>
+		</java>
+	</target>
+	
+	<target name="jars" description="jars">
+		<copy todir="${rx.rxapp.lib}" verbose="true">
+			<fileset dir="${build}" includes="*.jar"/> 
+		</copy>
+	</target>
+	
+	<target name="web-inf" description="webinf">
+		<fail unless="rx.rxapp.web-inf" message="You must set the RHYTHMYX_HOME environment variable" />
+		<copy todir="${rx.user.spring}" verbose="true">
+			<fileset dir="spring">
+				<include name="**.xml" />
+			</fileset>
+		</copy>
+	</target>
+
+</project>

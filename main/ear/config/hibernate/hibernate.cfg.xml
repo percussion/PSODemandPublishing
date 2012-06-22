@@ -1,0 +1,63 @@
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+   <session-factory>
+      <mapping class="com.percussion.i18n.PSLocale" />
+      <mapping class="com.percussion.cms.objectstore.PSComponentSummary" />
+      <mapping class="com.percussion.cms.objectstore.PSCmsObject" />
+      <mapping class="com.percussion.design.objectstore.PSConfig" />
+      <mapping class="com.percussion.design.objectstore.PSRelationshipPropertyData" />
+      <mapping class="com.percussion.services.assembly.data.PSAssemblyTemplate" />
+      <mapping class="com.percussion.services.assembly.data.PSTemplateBinding" />
+      <mapping class="com.percussion.services.assembly.data.PSTemplateSlot" />
+      <mapping class="com.percussion.services.assembly.data.PSSlotContentFinderParam" />
+      <mapping class="com.percussion.services.assembly.data.PSTemplateTypeSlotAssociation" />
+      <mapping class="com.percussion.services.content.data.PSAutoTranslation" />
+      <mapping class="com.percussion.services.content.data.PSKeyword" />
+      <mapping class="com.percussion.services.contentmgr.data.PSNodeDefinition" />
+      <mapping class="com.percussion.services.contentmgr.data.PSContentTemplateDesc" />
+      <mapping class="com.percussion.services.filter.data.PSItemFilter" />
+      <mapping class="com.percussion.services.filter.data.PSItemFilterRuleDef" />
+      <mapping class="com.percussion.services.filter.data.PSItemFilterRuleParam" />
+      <mapping class="com.percussion.services.guidmgr.data.PSNextNumber" />
+      <mapping class="com.percussion.services.guidmgr.data.PSGuidGeneratorData" />
+      <mapping class="com.percussion.services.locking.data.PSObjectLock" />
+      <mapping class="com.percussion.services.publisher.data.PSContentList" />
+      <mapping class="com.percussion.services.publisher.data.PSTemplateExpanderParam" />
+      <mapping class="com.percussion.services.publisher.data.PSContentListGeneratorParam" />
+      <mapping class="com.percussion.services.publisher.data.PSEdition" />
+      <mapping class="com.percussion.services.publisher.data.PSPublisher" />
+      <mapping class="com.percussion.services.publisher.data.PSSiteItem" />
+      <mapping class="com.percussion.services.relationship.data.PSRelationshipConfigName" />
+      <mapping class="com.percussion.services.relationship.data.PSRelationshipData" />
+      <mapping class="com.percussion.services.security.data.PSAccessLevelImpl"/>
+      <mapping class="com.percussion.services.security.data.PSAclEntryImpl"/>
+      <mapping class="com.percussion.services.security.data.PSAclImpl"/>
+      <mapping class="com.percussion.services.security.data.PSBackEndRole" />
+      <mapping class="com.percussion.services.security.data.PSCommunity" />
+      <mapping class="com.percussion.services.security.data.PSCommunityRoleAssociation" />
+      <mapping class="com.percussion.services.security.data.PSBackEndSubject" />
+      <mapping class="com.percussion.services.sitemgr.data.PSSite" />
+      <mapping class="com.percussion.services.sitemgr.data.PSSiteProperty" />
+      <mapping class="com.percussion.services.sitemgr.data.PSPublishingContext" />
+      <mapping class="com.percussion.services.sitemgr.data.PSLocationScheme" />
+      <mapping class="com.percussion.services.sitemgr.data.PSLocationSchemeParameter" />
+      <mapping class="com.percussion.services.system.data.PSAgingTransition" />
+      <mapping class="com.percussion.services.system.data.PSAssignedRole" />
+      <mapping class="com.percussion.services.system.data.PSContentStatusHistory" />      
+      <mapping class="com.percussion.services.system.data.PSNotification" />
+      <mapping class="com.percussion.services.system.data.PSNotificationDef" />
+      <mapping class="com.percussion.services.system.data.PSSharedProperty" />
+      <mapping class="com.percussion.services.system.data.PSState" />
+      <mapping class="com.percussion.services.system.data.PSTransitionBase" />
+      <mapping class="com.percussion.services.system.data.PSTransition" />
+      <mapping class="com.percussion.services.system.data.PSTransitionRole" />
+      <mapping class="com.percussion.services.system.data.PSUIComponent" />
+      <mapping class="com.percussion.services.system.data.PSUIComponentProperty" />
+      <mapping class="com.percussion.services.system.data.PSWorkflow" />
+      <mapping class="com.percussion.services.system.data.PSWorkflowRole" />
+      <mapping class="com.percussion.services.ui.data.PSHierarchyNode" />
+      <mapping class="com.percussion.services.ui.data.PSHierarchyNodeProperty" />
+      <mapping class="com.percussion.services.utils.orm.data.PSTempId" />
+   </session-factory>
+</hibernate-configuration>

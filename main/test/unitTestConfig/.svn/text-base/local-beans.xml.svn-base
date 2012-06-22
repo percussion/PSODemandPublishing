@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+   <bean id="sys_protoLegacyDataSource"
+      class="org.apache.commons.dbcp.BasicDataSourceFactory"
+      factory-method="createDataSource" >
+      <constructor-arg>
+         <props>
+            <prop key="driverClassName">net.sourceforge.jtds.jdbc.Driver</prop> 
+            <prop key="url">jdbc:jtds:sqlserver://localhost</prop>
+            <prop key="username">sa</prop>
+            <prop key="password">demo</prop>
+         </props>
+      </constructor-arg>
+   </bean>
+   <bean id="sys_mockJndiContextHelper" 
+      class="com.percussion.utils.jndi.PSNamingContextHelper">
+      <!-- Set root before bindings! -->
+      <property name="root">
+         <value>java:comp/env</value>
+      </property>
+      <property name="bindings">
+         <map>
+            <entry key="jdbc/rxdefault">
+               <ref local="sys_protoLegacyDataSource"/>
+            </entry>
+         </map>
+      </property>
+   </bean>
+   
+   <bean id="sys_rhythmyxinfo"
+      class="com.percussion.services.general.impl.PSRhythmyxInfo">
+      <property name="bindings">
+         <map>
+            <entry key="UNIT_TESTING">
+               <value>true</value>
+            </entry>
+         </map>
+      </property>
+   </bean>
+   
+   <bean id="sys_datasourceResolver"
+      class="com.percussion.services.datasource.PSDatasourceResolver">
+      <property name="repositoryDatasource" value="rxdefault"/>
+      <property name="datasourceConfigurations">
+         <list>
+            <bean id="rxdefault" 
+            	class="com.percussion.services.datasource.PSDatasourceConfig">
+               <property name="name" value="rxdefault"/>
+               <property name="dataSource" value="jdbc/rxdefault"/>
+               <property name="database" value="R61"/>
+               <property name="origin" value="dbo"/>
+          </bean>
+         </list>
+      </property>
+   </bean>      
+
+   <bean id="sys_hibernateDialects"
+      class="com.percussion.services.datasource.PSHibernateDialectConfig">
+      <property name="dialects">
+         <map>
+                <entry key="jtds:sqlserver">
+                    <value>org.hibernate.dialect.SQLServerDialect</value>
+                </entry>
+                <entry key="inetdae7">
+                    <value>org.hibernate.dialect.SQLServerDialect</value>
+                </entry>
+                <entry key="oracle:thin">
+                    <value>org.hibernate.dialect.OracleDialect</value>
+                </entry>
+                <entry key="sybase">
+                    <value>org.hibernate.dialect.SybaseDialect</value>
+                </entry>                
+                <entry key="db2">
+                    <value>org.hibernate.dialect.DB2Dialect</value>
+                </entry>
+         </map>
+      </property>      
+   </bean>   
+
+   <bean id="sys_roleMgr" singleton="true"
+      class="com.percussion.services.security.impl.PSRoleMgr">
+      <property name="subjectCatalogers">
+         <list>
+            <bean id="sys_mockSubjectCataloger" 
+            	class="com.percussion.services.security.test.PSMockSubjectCataloger">
+               <property name="name" value="Test Subject Cat"/>
+               <property name="description" value="A test subject cataloger"/>
+               <property name="supportsGroups" value="false"/>
+            </bean>
+            <bean id="sys_mockSubjectCatalogerGroup" 
+            	class="com.percussion.services.security.test.PSMockSubjectCataloger">
+               <property name="name" value="Test Subject Cat Group"/>
+               <property name="description" value="A test subject cataloger with group support"/>
+               <property name="supportsGroups" value="true"/>
+            </bean>
+         </list>
+      </property>    
+      <property name="roleCatalogers">
+         <list>
+            <bean id="sys_mockRoleCataloger" 
+            	class="com.percussion.services.security.test.PSMockRoleCataloger">
+               <property name="name" value="Test Role Cat"/>
+               <property name="description" value="A test role cataloger"/>
+            </bean>
+         </list>
+      </property>          
+   </bean>
+</beans>
