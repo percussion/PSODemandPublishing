@@ -1,6 +1,6 @@
 PSODemandPublishing
 ===================
-
+[Percussion Software](http://www.percussion.com "Percussion Software")
 
 The PSODemandPublishing extension allows for a better publish now than what 6.1 provides.
 The original publish now blocked when you a user used it. This version of publish now
